@@ -1,23 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Booking Page</title>
-  <script defer src="script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Form</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
-  <h1>Book Your Spot</h1>
-  <form id="bookingForm">
-    <input name="name" placeholder="Name" required /><br/>
-    <input name="email" type="email" placeholder="Email" required /><br/>
-    <input name="date" type="date" required /><br/>
-    <select name="type">
-      <option value="half">Half Day</option>
-      <option value="full">Full Day</option>
-    </select><br/>
-    <input name="adults" type="number" placeholder="Adults" min="0" value="0" /><br/>
-    <input name="children" type="number" placeholder="Children" min="0" value="0" /><br/>
-    <button type="submit">Book</button>
-  </form>
-  <p id="message"></p>
+    <h1>Book Your Spot</h1>
+    <form id="bookingForm">
+        <input type="text" name="name" placeholder="Name" required><br>
+        <input type="email" name="email" placeholder="Email" required><br>
+        <input type="date" name="date" required><br>
+        <input type="number" name="adults" placeholder="Adults" min="0" required><br>
+        <input type="number" name="children" placeholder="Children" min="0" required><br>
+        <select name="type" required>
+            <option value="full">Full Day</option>
+            <option value="half">Half Day</option>
+        </select><br>
+        <button type="submit">Submit Booking</button>
+    </form>
+    <div id="message"></div>
 </body>
 </html>
