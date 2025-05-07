@@ -1,34 +1,103 @@
-body {
-    font-family: Arial, sans-serif;
+/* Reset some default styles */
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #00b4d8, #0093c4); /* Water-like gradient */
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
     padding: 20px;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.2); /* Transparent white background */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
 }
 
 h1 {
-    color: #4CAF50;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+    font-weight: 600;
 }
 
 form {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-input, select, button {
-    width: 100%;
+label {
+    font-size: 1rem;
+    color: #ffffff;
+    text-align: left;
+}
+
+input, select {
     padding: 10px;
-    margin: 10px 0;
-    border-radius: 5px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    outline: none;
+    background: rgba(255, 255, 255, 0.3);
+    color: #fff;
+    transition: background-color 0.3s ease-in-out;
+}
+
+input:focus, select:focus {
+    background: rgba(255, 255, 255, 0.5);
 }
 
 button {
-    background-color: #4CAF50;
-    color: white;
+    padding: 10px;
     border: none;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    background-color: #00b4d8; /* Aquatic blue color */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    font-weight: bold;
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #0093c4; /* Darker blue on hover */
+}
+
+/* Water ripple animation for buttons */
+@keyframes ripple {
+    0% {
+        transform: scale(0);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+button:active {
+    animation: ripple 0.6s linear;
+}
+
+input[type="date"],
+input[type="number"] {
+    background: rgba(255, 255, 255, 0.3); /* Light, watery effect */
+}
+
+/* Optional - Add subtle border to inputs */
+input, select {
+    border: 1px solid rgba(255, 255, 255, 0.4);
 }
