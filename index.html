@@ -1,26 +1,40 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <title>Prenotazione</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prenotazione Piscina</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h2>Prenota una giornata</h2>
-  <form id="bookingForm">
-    <label>Nome: <input name="nome" required></label><br>
-    <label>Email: <input name="email" type="email" required></label><br>
-    <label>Data: <input name="data" type="date" required></label><br>
-    <label>Adulti: <input name="adulti" type="number" value="0" min="0"></label><br>
-    <label>Bambini: <input name="bimbi" type="number" value="0" min="0"></label><br>
-    <label>Tipo:
-      <select name="tipo">
-        <option value="Mezza giornata">Mezza giornata</option>
-        <option value="Giornata intera">Giornata intera</option>
-      </select>
-    </label><br><br>
-    <button type="submit">Invia prenotazione</button>
-  </form>
+    <div class="container">
+        <h1>Prenotazione Piscina</h1>
+        <form id="bookingForm">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required placeholder="Nome"><br>
 
-  <script src="script.js"></script>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required placeholder="Email"><br>
+
+            <label for="data">Data:</label>
+            <input type="date" id="data" name="data" required><br>
+
+            <label for="adulti">Adulti:</label>
+            <input type="number" id="adulti" name="adulti" required><br>
+
+            <label for="bimbi">Bimbi:</label>
+            <input type="number" id="bimbi" name="bimbi" required><br>
+
+            <label for="tipo">Tipo:</label>
+            <select id="tipo" name="tipo" required>
+                <option value="tipo1">Tipo 1</option>
+                <option value="tipo2">Tipo 2</option>
+            </select><br>
+
+            <button type="submit">Prenota</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
