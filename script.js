@@ -6,10 +6,10 @@ document.getElementById('bookingForm').addEventListener('submit', function(e) {
     const data = {
         name: form.name.value,
         email: form.email.value,
-        date: form.date.value,
-        adults: form.adults.value,
-        children: form.children.value,
-        type: form.type.value
+        date: form.data.value,
+        adults: form.adulti.value,
+        children: form.bimbi.value,
+        type: form.tipo.value
     };
 
     // URL for Google Sheets API (using Google Sheets as JSON)
