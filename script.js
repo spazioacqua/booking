@@ -1,3 +1,21 @@
+const proxyUrl = "https://cors-anywhere.herokuapp.com/";
+const targetUrl = "https://script.google.com/macros/s/AKfycbxJzyhGudep8qGt3LDEZ8Vv3WJUS0wSG0fbaAg7w5Jom_6edhfgJIz6peIvgWQFunqM/exec";
+
+const formData = new FormData(document.getElementById('yourFormId'));
+
+fetch(proxyUrl + targetUrl, {
+  method: "POST",
+  body: formData
+})
+.then(response => response.json())
+.then(data => {
+  console.log("Success:", data);
+})
+.catch(error => {
+  console.error("Error:", error);
+});
+
+
 document.getElementById('bookingForm').addEventListener('submit', function(e) {
   e.preventDefault();
 
