@@ -1,40 +1,29 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prenotazione Piscina</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pool Booking</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div class="container">
-        <h1>Prenotazione Piscina</h1>
-        <form id="bookingForm">
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" required placeholder="Nome"><br>
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required placeholder="Email"><br>
-
-            <label for="data">Data:</label>
-            <input type="date" id="data" name="data" required><br>
-
-            <label for="adulti">Adulti:</label>
-            <input type="number" id="adulti" name="adulti" required><br>
-
-            <label for="bimbi">Bimbi:</label>
-            <input type="number" id="bimbi" name="bimbi" required><br>
-
-            <label for="tipo">Tipo:</label>
-            <select id="tipo" name="tipo" required>
-                <option value="tipo1">Tipo 1</option>
-                <option value="tipo2">Tipo 2</option>
-            </select><br>
-
-            <button type="submit">Prenota</button>
-        </form>
-    </div>
-
-    <script src="script.js"></script>
+  <div class="form-container">
+    <h1>Prenota la Piscina</h1>
+    <form id="bookingForm">
+      <input type="text" name="nome" placeholder="Nome" required />
+      <input type="email" name="email" placeholder="Email" required />
+      <input type="date" name="data" required />
+      <input type="number" name="adulti" placeholder="Numero di Adulti" min="0" max="20" required />
+      <input type="number" name="bimbi" placeholder="Numero di Bambini" min="0" required />
+      <select name="tipo" required>
+        <option value="">Tipo di Prenotazione</option>
+        <option value="Giornata intera">Giornata intera</option>
+        <option value="Mezza giornata">Mezza giornata</option>
+      </select>
+      <button type="submit">Prenota</button>
+    </form>
+    <p id="message"></p>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
