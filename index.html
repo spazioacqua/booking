@@ -1,26 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Booking Form</title>
-    <link rel="stylesheet" href="style.css">
-    <script defer src="script.js"></script>
+  <meta charset="UTF-8">
+  <title>Prenotazione</title>
 </head>
 <body>
-    <h1>Book Your Spot</h1>
-    <form id="bookingForm">
-        <input type="text" name="name" placeholder="Name" required><br>
-        <input type="email" name="email" placeholder="Email" required><br>
-        <input type="date" name="date" required><br>
-        <input type="number" name="adults" placeholder="Adults" min="0" required><br>
-        <input type="number" name="children" placeholder="Children" min="0" required><br>
-        <select name="type" required>
-            <option value="full">Full Day</option>
-            <option value="half">Half Day</option>
-        </select><br>
-        <button type="submit">Submit Booking</button>
-    </form>
-    <div id="message"></div>
+  <h2>Prenota una giornata</h2>
+  <form id="bookingForm">
+    <label>Nome: <input name="nome" required></label><br>
+    <label>Email: <input name="email" type="email" required></label><br>
+    <label>Data: <input name="data" type="date" required></label><br>
+    <label>Adulti: <input name="adulti" type="number" value="0" min="0"></label><br>
+    <label>Bambini: <input name="bimbi" type="number" value="0" min="0"></label><br>
+    <label>Tipo:
+      <select name="tipo">
+        <option value="Mezza giornata">Mezza giornata</option>
+        <option value="Giornata intera">Giornata intera</option>
+      </select>
+    </label><br><br>
+    <button type="submit">Invia prenotazione</button>
+  </form>
+
+  <script src="script.js"></script>
 </body>
 </html>
