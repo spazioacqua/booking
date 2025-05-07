@@ -1,103 +1,81 @@
-/* Reset some default styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Reset some basic styles */
+body, h1, label, input, select, button {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+/* Background and font */
 body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(to bottom, #00b4d8, #0093c4); /* Water-like gradient */
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    padding: 20px;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom right, #cceeff, #e6f7ff);
+  color: #004466;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
 }
 
-.container {
-    background-color: rgba(255, 255, 255, 0.2); /* Transparent white background */
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 500px;
-    text-align: center;
-}
-
-h1 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #ffffff;
-    font-weight: 600;
-}
-
+/* Form container */
 form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  background-color: #ffffffcc;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 102, 153, 0.3);
+  width: 100%;
+  max-width: 500px;
+  backdrop-filter: blur(5px);
 }
 
+/* Form heading */
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #006699;
+}
+
+/* Label and inputs */
 label {
-    font-size: 1rem;
-    color: #ffffff;
-    text-align: left;
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  margin-top: 15px;
 }
 
 input, select {
-    padding: 10px;
-    border: none;
-    border-radius: 10px;
-    font-size: 1rem;
-    outline: none;
-    background: rgba(255, 255, 255, 0.3);
-    color: #fff;
-    transition: background-color 0.3s ease-in-out;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #99ccdd;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  background-color: #f8fcff;
 }
 
-input:focus, select:focus {
-    background: rgba(255, 255, 255, 0.5);
-}
-
+/* Submit button */
 button {
-    padding: 10px;
-    border: none;
-    border-radius: 10px;
-    font-size: 1.2rem;
-    background-color: #00b4d8; /* Aquatic blue color */
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
-    font-weight: bold;
+  background-color: #00aaff;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.3s;
 }
 
 button:hover {
-    background-color: #0093c4; /* Darker blue on hover */
+  background-color: #0077aa;
 }
 
-/* Water ripple animation for buttons */
-@keyframes ripple {
-    0% {
-        transform: scale(0);
-        opacity: 0.5;
-    }
-    100% {
-        transform: scale(4);
-        opacity: 0;
-    }
-}
-
-button:active {
-    animation: ripple 0.6s linear;
-}
-
-input[type="date"],
-input[type="number"] {
-    background: rgba(255, 255, 255, 0.3); /* Light, watery effect */
-}
-
-/* Optional - Add subtle border to inputs */
-input, select {
-    border: 1px solid rgba(255, 255, 255, 0.4);
+/* Success message */
+.success-message {
+  background-color: #dff0d8;
+  color: #3c763d;
+  padding: 12px;
+  margin-top: 20px;
+  border-radius: 8px;
+  text-align: center;
 }
