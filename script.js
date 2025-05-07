@@ -4,7 +4,7 @@ document.getElementById('bookingForm').addEventListener('submit', function(e) {
 
     const form = e.target;
     const data = {
-        name: form.name.value,
+        name: form.nome.value,
         email: form.email.value,
         date: form.data.value,
         adults: form.adulti.value,
