@@ -11,9 +11,11 @@ document.getElementById('bookingForm').addEventListener('submit', function(e) {
         tipo: form.tipo.value
     };
 
-    const sheetURL = 'https://script.google.com/macros/s/AKfycbz0VpLshlzQCCjVEDaR9iNOGmJHKf3-mf0KLVtgtvCmLBSeYk2zoOg5Rde_22HfXz0HnA/exec';
+    // Using a CORS proxy to bypass the restriction
+    const proxyUrl = 'https://cors-anywhere.herokuapp.com/'; // CORS proxy URL
+    const sheetURL = 'https://script.google.com/macros/s/AKfycbz0VpLshlzQCCjVEDaR9iNOGmJHKf3-mf0KLVtgtvCmLBSeYk2zoOg5Rde_22HfXz0HnA/exec'; // Your Google Apps Script URL
 
-    fetch(sheetURL, {
+    fetch(proxyUrl + sheetURL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
