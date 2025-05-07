@@ -1,29 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pool Booking</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Form</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="form-container">
-    <h1>Prenotazione giornaliera della piscina</h1>
-    <form id="bookingForm">
-      <input type="text" name="nome" placeholder="Nome" required />
-      <input type="email" name="email" placeholder="Email" required />
-      <input type="date" name="data" required />
-      <input type="number" name="adulti" placeholder="Numero di Adulti" min="0" max="20" required />
-      <input type="number" name="bimbi" placeholder="Numero di Bambini" min="0" required />
-      <select name="tipo" required>
-        <option value="">Tipo di Prenotazione</option>
-        <option value="Giornata intera">Giornata intera</option>
-        <option value="Mezza giornata">Mezza giornata</option>
-      </select>
-      <button type="submit">Prenota</button>
-    </form>
-    <p id="message"></p>
-  </div>
-  <script src="script.js"></script>
+    <div class="container">
+        <h1>Pool Booking Form</h1>
+        <form id="bookingForm">
+            <label for="nome">Name:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="data">Desired Date:</label>
+            <input type="date" id="data" name="data" required>
+
+            <label for="adulti">Number of Adults:</label>
+            <input type="number" id="adulti" name="adulti" min="1" required>
+
+            <label for="bimbi">Number of Children:</label>
+            <input type="number" id="bimbi" name="bimbi" min="0" required>
+
+            <label for="tipo">Booking Type:</label>
+            <select id="tipo" name="tipo" required>
+                <option value="full_day">Full Day</option>
+                <option value="half_day">Half Day</option>
+            </select>
+
+            <button type="submit">Submit Booking</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
