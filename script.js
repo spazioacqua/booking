@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
   form.addEventListener('submit', async function (e) {
     e.preventDefault();
 
-    const sheetURL = 'YOUR_GOOGLE_SCRIPT_WEB_APP_URL'; // Replace this
+    const sheetURL = 'https://script.google.com/macros/s/AKfycbz0VpLshlzQCCjVEDaR9iNOGmJHKf3-mf0KLVtgtvCmLBSeYk2zoOg5Rde_22HfXz0HnA/exec'; // Replace this
 
     const data = {
       nome: form.nome.value.trim(),
