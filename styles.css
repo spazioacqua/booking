@@ -1,7 +1,7 @@
 /* Global Styles */
 body {
   font-family: Arial, sans-serif;
-  background: #e0f7fa;
+  background: #e0f7fa; /* Light blue background for a pool feel */
   color: #004d40;
   margin: 0;
   padding: 0;
@@ -9,55 +9,66 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background-image: url('https://www.transparenttextures.com/patterns/painted-lines.png'); /* Optional subtle pattern */
 }
 
 .container {
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.9); /* Slight transparency for a soft, airy feel */
   padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  width: 300px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  width: 350px;
+  text-align: center;
 }
 
 h1 {
-  text-align: center;
-  color: #00796b;
-  font-size: 1.5em;
+  color: #00796b; /* Deep turquoise for the header */
+  font-size: 2em;
   margin-bottom: 20px;
 }
 
 form label {
   display: block;
   margin: 10px 0 5px;
+  font-weight: bold;
 }
 
 input, select, button {
   width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border-radius: 5px;
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 8px;
   border: 1px solid #00796b;
   box-sizing: border-box;
 }
 
 button {
-  background-color: #00796b;
+  background-color: #00796b; /* Friendly pool-like green */
   color: white;
   font-size: 1.1em;
   cursor: pointer;
   border: none;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
-  background-color: #004d40;
+  background-color: #004d40; /* Darker shade of green when hovering */
+}
+
+input[type="date"]:disabled,
+input[type="number"]:disabled,
+select:disabled {
+  background-color: #e0f7fa;
+  color: #004d40;
 }
 
 /* Success Message */
 #successMessage {
-  background-color: #a5d6a7;
+  background-color: #a5d6a7; /* Light green background */
   padding: 20px;
   border-radius: 8px;
   text-align: center;
+  margin-top: 20px;
 }
 
 #successMessage.hidden {
