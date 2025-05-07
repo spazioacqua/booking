@@ -1,37 +1,34 @@
 document.getElementById('bookingForm').addEventListener('submit', function(e) {
-    e.preventDefault(); // Prevent default form submission
+  e.preventDefault();
 
-    const form = e.target;
-    const data = {
-        name: form.Nome.value,
-        email: form.Email.value,
-        date: form.Data.value,
-        adults: form.Adulti.value,
-        children: form.Bimbi.value,
-        type: form.Tipo.value
-    };
+  const form = e.target;
+  const data = {
+    nome: form.nome.value,
+    email: form.email.value,
+    data: form.data.value,
+    adulti: form.adulti.value,
+    bimbi: form.bimbi.value,
+    tipo: form.tipo.value
+  };
 
-    // URL for Google Sheets API (using Google Sheets as JSON)
-    const sheetURL = 'https://script.google.com/macros/s/AKfycbxJzyhGudep8qGt3LDEZ8Vv3WJUS0wSG0fbaAg7w5Jom_6edhfgJIz6peIvgWQFunqM/exec';
+  const sheetURL = 'https://script.google.com/macros/s/AKfycbxJzyhGudep8qGt3LDEZ8Vv3WJUS0wSG0fbaAg7w5Jom_6edhfgJIz6peIvgWQFunqM/exec';
 
-    // Send data to Google Sheets using fetch
-    fetch(sheetURL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        return response.json();
-    })
-    .then(data => {
-        document.getElementById('message').textContent = "Booking successful!";
-        form.reset();  // Reset the form
-    })
-    .catch(error => {
-        document.getElementById('message').textContent = "Sorry, there was an error. Please try again later.";
-        console.error('Error:', error);
-    });
+  fetch(sheetURL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  })
+  .then(response => response.json())
+  .then(result => {
+    if (result.result === 'success') {
+      alert("Prenotazione avvenuta con successo!");
+      form.reset();
+    } else {
+      alert("Errore durante la prenotazione.");
+    }
+  })
+  .catch(error => {
+    console.error('Errore:', error);
+    alert("Errore nella connessione. Riprova più tardi.");
+  });
 });
