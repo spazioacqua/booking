@@ -1,81 +1,57 @@
-/* Reset some basic styles */
-body, h1, label, input, select, button {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Background and font */
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to bottom right, #cceeff, #e6f7ff);
-  color: #004466;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #e0f7fa;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to bottom, #00796b, #004d40);
+    color: white;
 }
 
-/* Form container */
-form {
-  background-color: #ffffffcc;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 102, 153, 0.3);
-  width: 100%;
-  max-width: 500px;
-  backdrop-filter: blur(5px);
+.container {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 40px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
 }
 
-/* Form heading */
 h1 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #006699;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #ffffff;
 }
 
-/* Label and inputs */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-  margin-top: 15px;
+    font-size: 1rem;
+    margin-top: 10px;
 }
 
-input, select {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #99ccdd;
-  border-radius: 8px;
-  margin-bottom: 10px;
-  font-size: 1rem;
-  background-color: #f8fcff;
+input, select, button {
+    width: 80%;
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
 }
 
-/* Submit button */
 button {
-  background-color: #00aaff;
-  color: white;
-  padding: 12px;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  cursor: pointer;
-  margin-top: 10px;
-  transition: background 0.3s;
+    background-color: #00796b;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
-  background-color: #0077aa;
-}
-
-/* Success message */
-.success-message {
-  background-color: #dff0d8;
-  color: #3c763d;
-  padding: 12px;
-  margin-top: 20px;
-  border-radius: 8px;
-  text-align: center;
+    background-color: #004d40;
 }
