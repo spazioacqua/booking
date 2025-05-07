@@ -1,19 +1,18 @@
-// Function to send booking data to Google Sheets
 document.getElementById('bookingForm').addEventListener('submit', function(e) {
     e.preventDefault(); // Prevent default form submission
 
     const form = e.target;
     const data = {
-        name: form.Nome.value,
-        email: form.Email.value,
-        date: form.Data.value,
-        adults: form.Adulti.value,
-        children: form.Bimbi.value,
-        type: form.Tipo.value
+        name: form.name.value,
+        email: form.email.value,
+        date: form.date.value,
+        adults: form.adults.value,
+        children: form.children.value,
+        type: form.type.value
     };
 
     // URL for Google Sheets API (using Google Sheets as JSON)
-    const sheetURL = 'https://script.google.com/macros/library/d/1LAujobqvhYfCyCAMQ0cB_0XEYO9uuEQgSgeC66DXWdnM-pt_0svhqEum/1';
+    const sheetURL = 'https://script.google.com/macros/s/AKfycbxJzyhGudep8qGt3LDEZ8Vv3WJUS0wSG0fbaAg7w5Jom_6edhfgJIz6peIvgWQFunqM/exec';
 
     // Send data to Google Sheets using fetch
     fetch(sheetURL, {
@@ -21,7 +20,12 @@ document.getElementById('bookingForm').addEventListener('submit', function(e) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
     })
-    .then(response => response.json())
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
     .then(data => {
         document.getElementById('message').textContent = "Booking successful!";
         form.reset();  // Reset the form
@@ -31,4 +35,3 @@ document.getElementById('bookingForm').addEventListener('submit', function(e) {
         console.error('Error:', error);
     });
 });
-
