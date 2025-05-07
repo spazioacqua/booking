@@ -11,7 +11,7 @@ document.getElementById('bookingForm').addEventListener('submit', function(e) {
     tipo: form.tipo.value
   };
 
-  const sheetURL = 'https://script.google.com/macros/s/AKfycbz0VpLshlzQCCjVEDaR9iNOGmJHKf3-mf0KLVtgtvCmLBSeYk2zoOg5Rde_22HfXz0HnA/exec'; // Your Web App URL
+  const sheetURL = 'https://script.google.com/macros/library/d/1Pc_be16zI3Mjz5FiWnXad0wq43-0BZQEH_EQorTTrzJ8E14t4zOYR9dE/4'; // Your Web App URL
 
   fetch(sheetURL, {
     method: 'POST',
