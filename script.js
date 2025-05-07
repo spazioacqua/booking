@@ -4,16 +4,16 @@ document.getElementById('bookingForm').addEventListener('submit', function(e) {
 
     const form = e.target;
     const data = {
-        name: form.nome.value,
-        email: form.email.value,
-        date: form.data.value,
-        adults: form.adulti.value,
-        children: form.bimbi.value,
-        type: form.tipo.value
+        name: form.Nome.value,
+        email: form.Email.value,
+        date: form.Data.value,
+        adults: form.Adulti.value,
+        children: form.Bimbi.value,
+        type: form.Tipo.value
     };
 
     // URL for Google Sheets API (using Google Sheets as JSON)
-    const sheetURL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSbCtiVRP78qQyCMKWUbF_iRtpEGwSSiG0kLi3akv9wsx8hMBS_fqL_UnzgHfLsyLK_J1d7Hne3G9au/pubhtml';
+    const sheetURL = 'https://script.google.com/macros/library/d/1LAujobqvhYfCyCAMQ0cB_0XEYO9uuEQgSgeC66DXWdnM-pt_0svhqEum/1';
 
     // Send data to Google Sheets using fetch
     fetch(sheetURL, {
