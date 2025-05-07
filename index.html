@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Booking Page</title>
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <h1>Book Your Spot</h1>
+  <form id="bookingForm">
+    <input name="name" placeholder="Name" required /><br/>
+    <input name="email" type="email" placeholder="Email" required /><br/>
+    <input name="date" type="date" required /><br/>
+    <select name="type">
+      <option value="half">Half Day</option>
+      <option value="full">Full Day</option>
+    </select><br/>
+    <input name="adults" type="number" placeholder="Adults" min="0" value="0" /><br/>
+    <input name="children" type="number" placeholder="Children" min="0" value="0" /><br/>
+    <button type="submit">Book</button>
+  </form>
+  <p id="message"></p>
+</body>
+</html>
