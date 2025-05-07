@@ -1,34 +1,56 @@
-document.getElementById('bookingForm').addEventListener('submit', function(e) {
-  e.preventDefault();  // Prevent default form submission behavior
+document.addEventListener('DOMContentLoaded', function () {
+  const form = document.getElementById('bookingForm');
 
-  const form = e.target;  // The form that triggered the submit event
-  const data = {
-    nome: form.nome.value,
-    email: form.email.value,
-    data: form.data.value,
-    adulti: form.adulti.value,
-    bimbi: form.bimbi.value,
-    tipo: form.tipo.value
-  };
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
 
-  const sheetURL = 'https://script.google.com/macros/s/AKfycbxJzyhGudep8qGt3LDEZ8Vv3WJUS0wSG0fbaAg7w5Jom_6edhfgJIz6peIvgWQFunqM/exec';
+    const sheetURL = 'YOUR_GOOGLE_SCRIPT_WEB_APP_URL'; // Replace this
 
-  fetch(sheetURL, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(data)  // Sending data as JSON
-  })
-  .then(response => response.json())
-  .then(result => {
-    if (result.result === 'success') {
-      alert("Prenotazione avvenuta con successo!");
-      form.reset();  // Reset form after successful submission
-    } else {
-      alert("Errore durante la prenotazione.");
+    const data = {
+      nome: form.nome.value.trim(),
+      email: form.email.value.trim(),
+      data: form.data.value,
+      adulti: parseInt(form.adulti.value, 10),
+      bimbi: parseInt(form.bimbi.value, 10),
+      tipo: form.tipo.value
+    };
+
+    try {
+      const response = await fetch(sheetURL, {
+        method: 'POST',
+        mode: 'cors',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      });
+
+      const result = await response.json();
+
+      if (result.status === 'success') {
+        showMessage('Prenotazione avvenuta con successo!');
+        form.reset();
+        setTimeout(() => {
+          window.location.href = '/'; // Replace with your homepage URL once it exists
+        }, 3000);
+      } else {
+        showMessage(result.message || 'Errore durante la prenotazione.', true);
+      }
+    } catch (error) {
+      console.error('Errore:', error);
+      showMessage('Errore nella connessione. Riprova più tardi.', true);
     }
-  })
-  .catch(error => {
-    console.error('Errore:', error);
-    alert("Errore nella connessione. Riprova più tardi.");
   });
+
+  function showMessage(message, isError = false) {
+    let msg = document.querySelector('.success-message');
+    if (!msg) {
+      msg = document.createElement('div');
+      msg.className = 'success-message';
+      form.appendChild(msg);
+    }
+    msg.style.backgroundColor = isError ? '#f8d7da' : '#d4edda';
+    msg.style.color = isError ? '#721c24' : '#155724';
+    msg.textContent = message;
+  }
 });
