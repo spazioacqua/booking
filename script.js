@@ -36,3 +36,12 @@ document.getElementById('bookingForm').addEventListener('submit', function(e) {
     alert("Connection error. Please try again later.");
   });
 });
+
+// Predefine allowed dates and max people per day
+const ALLOWED_DATES = [
+  '2025-05-10', '2025-05-11', '2025-05-17', '2025-05-18', '2025-05-24', '2025-05-25'
+];
+
+const MAX_ADULTS_PER_DAY = 20;
+
+// Google Apps Script (doPost) will handle the backend logic
